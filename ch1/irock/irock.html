@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
+    <title>irock</title>
+    <script>
+        function clickRock() {
+            var userName = prompt("what is your name","input your name here");
+            if(userName){
+                alert("hello,my friend "+userName+"!");
+                document.getElementById("rockimg").src="./rock_happy.png";
+            }
+        }
+    </script>
+</head>
+<body onload="alert('hello,i am your pet rock.');">
+<div class="irock" style="margin-top: 20px;text-align: center;">
+    <img id="rockimg" class="rockimg" src="./rock.png" style="cursor:pointer;" onclick="clickRock();">
+</div>
+</body>
+</html>
