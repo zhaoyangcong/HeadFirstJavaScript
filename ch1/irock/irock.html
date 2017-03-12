@@ -5,21 +5,33 @@
     <meta name="viewport" content="width=device-width">
     <title>irock</title>
     <script>
+        function resizeRock() {
+            document.getElementById("rockImg").style.height = (document.body.clientHeight - 100) * 0.9;
+        }
+
+        //点击石头变成笑脸
         function clickRock() {
             var userName = prompt("what is your name","input your name here");
             if(userName){
                 alert("hello,my friend "+userName+"!");
-                document.getElementById("rockimg").src="./rock_happy.png";
+                document.getElementById("rockImg").src="./rock_happy.png";
             }
             else{
                 alert("please input your name.");
             }
+            //等待5分钟，变成发呆
+            setTimeout("document.getElementById('rockimg').src='./rock.png';",3*100*1000);
+        }
+
+        //欢迎用户
+        function greetUser() {
+            alert('hello,i am your pet rock.');
         }
     </script>
 </head>
-<body onload="alert('hello,i am your pet rock.');">
-<div class="irock" style="margin-top: 20px;text-align: center;">
-    <img id="rockimg" class="rockimg" src="./rock.png" style="cursor:pointer;" onclick="clickRock();">
-</div>
+<body onload="resizeRock();greetUser();">
+    <div class="irock" style="margin-top: 20px;text-align: center;">
+        <img id="rockImg" src="rock.png"  alt="irock" style="cursor:pointer;" onclick="clickRock();" />
+    </div>
 </body>
 </html>
